@@ -1,14 +1,12 @@
-## Welcome to GitHub Pages
+## Sup?
 
-You can use the [editor on GitHub](https://github.com/kavikat/dangerZone/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Sup (stylized sup?) is a reccomendation engine chatbot.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How It Works
 
-### Markdown
+Simply wake the bot up with a sup, the bot will inquire which location you are looking for popular venues and return the re;evant information.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
+```STACK
 Syntax highlighted code block
 
 # Header 1
