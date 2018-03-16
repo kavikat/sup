@@ -16,9 +16,9 @@
          "currentIntent": {
              "name": "intent-name",
              "slots": {
-                 "condition": "insomnia"
+                 "location": "san mateo"
              },
              "confirmationStatus": "None, Confirmed, or Denied (intent confirmation, if configured)",
-             "inputTranscript": "I have  insomnia"
+             "inputTranscript": "san mateo, ca"
          }
      };
