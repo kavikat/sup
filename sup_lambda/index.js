@@ -1,51 +1,9 @@
-var mongoose = require('mongoose'),
-    assert = require('assert'),
-    async = require('async'),
-    Promise = require('bluebird');
+var assert = require('assert'),
+    async = require('async');
 /*
-    Holi HealthBot LAMBDA Function - submitDiag
-        retrieves documents based on condition as key
+    sup? reccomendation engine
 */
-var db = mongoose.connection,
-    Schema = mongoose.Schema,
-    output = '';
-//connect to DB
-mongoose.connect('mongodb://kavika:vdjdYFaXpmflsZ6d@holidb-shard-00-00-0uftc.mongodb.net:27017,holidb-shard-00-01-0uftc.mongodb.net:27017,holidb-shard-00-02-0uftc.mongodb.net:27017/holi?ssl=true&replicaSet=holiDB-shard-0&authSource=admin');
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-    console.log('Connected to mongo.');
-});
-var diagSchema =
-    new Schema({
-        condition: String,
-        symptoms: Array,
-        treatments: Array,
-        homeRemedies: Array,
-        mental: Array
-    }, {
-        collection: 'diags'
-    });
-//mongoose models
-var Diag = mongoose.model('Diag', diagSchema);
-mongoose.Promise = Promise;
-/*
-    product matching function
-*/
-function matchProduct(treatments) {
-    for (var i = 0; i < treatments.length; i++) {
-        output = {
-            "dialogAction": {
-                "type": "Close",
-                "fulfillmentState": "Fulfilled",
-                "message": {
-                    "contentType": "PlainText",
-                    "content": "https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Damazonfresh&field-keywords=" + treatments[i]
-                }
-            }
-        };
-    }
-    return output;
-}
+
 /*
     handler function
 */
