@@ -1,6 +1,6 @@
 ## Sup?
 
-Sup (stylized sup?) is a reccomendation engine chatbot.
+SUp? is a reccomendation engine chatbot.
 
 ### How It Works
 
