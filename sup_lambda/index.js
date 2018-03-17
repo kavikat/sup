@@ -1,5 +1,6 @@
-var assert = require('assert'),
-    async = require('async');
+const assert = require('assert'),
+    async = require('async'),
+    request = require('request');
 /*
     sup? reccomendation engine
 */
@@ -9,26 +10,25 @@ var assert = require('assert'),
 */
 exports.handler = function (event, context, callback) {
 
-    var body = event.currentIntent.slots.condition.toLowerCase();
+    var body = event.currentIntent.slots.location.toLowerCase();
     /*
 
     */
     async.waterfall([
         function (callback) {
 
-            //TODO - logic for sup, api call to foursquare places API
-            const request = require('request');
+            //logic for sup, api call to foursquare places API
 
             request({
-                url: 'https://api.foursquare.com/v2/venues/explore',
+                url: 'https://api.foursquare.com/v2/venues/trending',
                 method: 'GET',
                 qs: {
                     client_id: process.env.CLIENT_ID,
                     client_secret: process.env.CLIENT_SECRET,
-                    ll: '40.7243,-74.0018',
-                    query: 'coffee',
-                    v: '20170801',
-                    limit: 1
+                    near: body,
+                    radius: 2000,
+                    limit: 1,
+                    v: '20170801'
                 }
             }, function (err, res, body) {
                 if (err) {
