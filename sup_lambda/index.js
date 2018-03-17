@@ -30,7 +30,20 @@ exports.handler = function (event, context, callback) {
         if (err) {
             console.error(err);
         } else {
-            console.log(body);
-        }
-    });
-};
+            //console.log(body);
+            var heads = body.hereNow;
+                place = body.name;
+            output = {
+                "dialogAction": {
+                    "type": "Close",
+                    "fulfillmentState": "Fulfilled",
+                    "message": {
+                        "contentType": "PlainText",
+                        "content": "There is "+heads+" checked in at "+place+", you might wanna check it out."
+                    }//message
+                }//dialogAction
+            };//output
+            console.log(output);
+        }//else
+    });//request
+};//handler
