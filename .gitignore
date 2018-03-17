@@ -7,6 +7,9 @@ node_modules/
 .DS_Store
 .DS_Store?
 
+# NPM gen files #
+
 ############
 .gitignore
+*.zip
 

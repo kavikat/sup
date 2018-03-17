@@ -5,10 +5,8 @@
     "main": "index.js",
     "dependencies": {
         "assert": "^1.4.1",
-        "async": "^2.3.0",
-        "bluebird": "^3.5.0",
-        "lambda": "^0.10.3",
-        "local": "^0.3.3",
+        "async": "^2.6.0",
+        "request": "^2.83.0"
     },
     "devDependencies": {},
     "scripts": {
