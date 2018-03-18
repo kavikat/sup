@@ -46,16 +46,15 @@ exports.handler = function (event, context, callback) {
                     callback(null, output);
                 } else {
                     console.log(body);
-                    var place = body.response.venues["0"].name,
-                        heads = body.response.venues["0"].hereNow.count;
-
+                    /*var place = body.response.venues["0"].name,
+                        heads = body.response.venues["0"].hereNow.count;*/
                     output = {
                         "dialogAction": {
                             "type": "Close",
                             "fulfillmentState": "Fulfilled",
                             "message": {
                                 "contentType": "PlainText",
-                                "content": "There is " + heads + " checked in at " + place + ", you might wanna check it out."
+                                "content": body
                             }//message
                         }//dialogAction
                     };//output
@@ -64,10 +63,6 @@ exports.handler = function (event, context, callback) {
                 }//else
             });//request
 
-        },
-        function (output, callback) {
-            console.log(output);
-            callback(null, output);
         },
     ],
         function (err, result) {
