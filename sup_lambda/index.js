@@ -41,12 +41,11 @@ exports.handler = function (event, context, callback) {
                                 "content": 'Sorry, I can\'t find anything happening in ' + location
                             } //msg
                         } //dA
-                    } //output
+                    }; //output
                     console.log(output);
                     callback(null, output);
                 } else {
                     var data = JSON.parse(body);
-
                     if (data.response.venues["0"]) {
                         var place = data.response.venues["0"].name,
                             heads = data.response.venues["0"].hereNow.count;
@@ -62,14 +61,15 @@ exports.handler = function (event, context, callback) {
                         };//output
                         console.log("Output: " + output);
                         callback(null, output);
-                    } else {
+                    }
+                    else {
                         output = {
                             "dialogAction": {
                                 "type": "Close",
                                 "fulfillmentState": "Fulfilled",
                                 "message": {
                                     "contentType": "PlainText",
-                                    "content": "Sorry, I can't find anything happening in " + location + " at the moment."
+                                    "content": "Sorry, I can't find anything buzzing in " + location + " at the moment."
                                 }//message
                             }//dialogAction
                         };//output
