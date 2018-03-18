@@ -45,21 +45,37 @@ exports.handler = function (event, context, callback) {
                     console.log(output);
                     callback(null, output);
                 } else {
-                    var data = JSON.parse(body),
-                        place = data.response.venues["0"].name,
+                    var data = JSON.parse(body);
+
+                    if (data.response.venues["0"]){
+                        var place = data.response.venues["0"].name,
                         heads = data.response.venues["0"].hereNow.count;
-                    output = {
-                        "dialogAction": {
-                            "type": "Close",
-                            "fulfillmentState": "Fulfilled",
-                            "message": {
-                                "contentType": "PlainText",
-                                "content": "You might want to check out the following venue : " + place + " It looks like there is currently " + heads +" people checked in."
-                            }//message
-                        }//dialogAction
-                    };//output
-                    console.log("Output: " + output);
-                    callback(null, output);
+                        output = {
+                            "dialogAction": {
+                                "type": "Close",
+                                "fulfillmentState": "Fulfilled",
+                                "message": {
+                                    "contentType": "PlainText",
+                                    "content": "You might want to check out the following venue : " + place + " It looks like there is currently " + heads + " people checked in."
+                                }//message
+                            }//dialogAction
+                        };//output
+                        console.log("Output: " + output);
+                        callback(null, output);
+                    }else{
+                        output = {
+                            "dialogAction": {
+                                "type": "Close",
+                                "fulfillmentState": "Fulfilled",
+                                "message": {
+                                    "contentType": "PlainText",
+                                    "content": "Sorry, I can't find anything happening in "+location+" at the moment."
+                                }//message
+                            }//dialogAction
+                        };//output
+                        console.log("Output: " + output);
+                        callback(null, output);
+                    }
                 }//else
             });//request
 
