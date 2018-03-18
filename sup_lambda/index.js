@@ -11,9 +11,12 @@ var output = '';
 */
 exports.handler = function (event, context, callback) {
 
-    var body = event.currentIntent.slots.location;
+    var body = event.currentIntent.slots.location,
+        placeName=null,
+        headCount=0;
     /*
     */
+   function(callback){
     request({
         url: 'https://api.foursquare.com/v2/venues/trending',
         method: 'GET',
@@ -29,8 +32,12 @@ exports.handler = function (event, context, callback) {
         if (err) {
             console.error(err);
         } else {
-            console.log(body);
+            //console.log(body);
+            placeName = body.response.venues["0"].name,
+            headCount = body.response.venues["0"].count;
+            console.log("There is "+headCount+" checked in at"+placeName);
         }
     });
+}//function
 };
 
