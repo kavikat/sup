@@ -22,8 +22,8 @@ exports.handler = function (event, context, callback) {
                 url: 'https://api.foursquare.com/v2/venues/trending',
                 method: 'GET',
                 qs: {
-                    client_id: 'ZJUY300MTPEWA5JXG14TNV4BS5MCC4HD34DJTQB04QK3K2WZ',
-                    client_secret: 'S5U1O4JNIUQKN33SCT5ZKFRNBXW4FTJNU0UW3K0QJ5BJ4PIV',
+                    client_id: process.env.CLIENT_ID,
+                    client_secret: process.env.CLIENT_SECRET,
                     near: location,
                     radius: 2000,
                     limit: 1,
