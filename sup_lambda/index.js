@@ -26,7 +26,7 @@ exports.handler = function (event, context, callback) {
                     client_secret: process.env.CLIENT_SECRET,
                     near: location,
                     radius: 2000,
-                    limit: 1,
+                    limit: 5,
                     v: '20170801'
                 }//qs
             }, function (err, res, body) {
@@ -54,7 +54,7 @@ exports.handler = function (event, context, callback) {
                             "fulfillmentState": "Fulfilled",
                             "message": {
                                 "contentType": "PlainText",
-                                "content": body
+                                "content": "You might want to check out the following venue (I hope you read JSON): " + body
                             }//message
                         }//dialogAction
                     };//output
