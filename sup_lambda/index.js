@@ -22,11 +22,11 @@ exports.handler = function (event, context, callback) {
                 url: 'https://api.foursquare.com/v2/venues/trending',
                 method: 'GET',
                 qs: {
-                    client_id: process.env.CLIENT_ID,
-                    client_secret: process.env.CLIENT_SECRET,
+                    client_id: 'ZJUY300MTPEWA5JXG14TNV4BS5MCC4HD34DJTQB04QK3K2WZ',
+                    client_secret: 'S5U1O4JNIUQKN33SCT5ZKFRNBXW4FTJNU0UW3K0QJ5BJ4PIV',
                     near: location,
                     radius: 2000,
-                    limit: 5,
+                    limit: 1,
                     v: '20170801'
                 }//qs
             }, function (err, res, body) {
@@ -45,16 +45,16 @@ exports.handler = function (event, context, callback) {
                     console.log(output);
                     callback(null, output);
                 } else {
-                    console.log(body);
-                    /*var place = body.response.venues["0"].name,
-                        heads = body.response.venues["0"].hereNow.count;*/
+                    var data = JSON.parse(body),
+                        place = data.response.venues["0"].name,
+                        heads = data.response.venues["0"].hereNow.count;
                     output = {
                         "dialogAction": {
                             "type": "Close",
                             "fulfillmentState": "Fulfilled",
                             "message": {
                                 "contentType": "PlainText",
-                                "content": "You might want to check out the following venue (I hope you read JSON): " + body
+                                "content": "You might want to check out the following venue : " + place + " It looks like there is currently " + heads +" people checked in."
                             }//message
                         }//dialogAction
                     };//output
