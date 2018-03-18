@@ -11,33 +11,65 @@ var output = '';
 */
 exports.handler = function (event, context, callback) {
 
-    var body = event.currentIntent.slots.location,
-        placeName=null,
-        headCount=0;
+    var location = event.currentIntent.slots.location;
     /*
+        request to foursquare API (trending)
     */
-   function(callback){
-    request({
-        url: 'https://api.foursquare.com/v2/venues/trending',
-        method: 'GET',
-        qs: {
-            client_id: process.env.CLIENT_ID,
-            client_secret: process.env.CLIENT_SECRET,
-            near: body,
-            radius: 2000,
-            limit: 1,
-            v: '20170801'
-        }//qs
-    }, function (err, res, body) {
-        if (err) {
-            console.error(err);
-        } else {
-            //console.log(body);
-            placeName = body.response.venues["0"].name,
-            headCount = body.response.venues["0"].count;
-            console.log("There is "+headCount+" checked in at"+placeName);
-        }
-    });
-}//function
-};
+    async.waterfall([
+        function (callback) {
 
+            request({
+                url: 'https://api.foursquare.com/v2/venues/trending',
+                method: 'GET',
+                qs: {
+                    client_id: process.env.CLIENT_ID,
+                    client_secret: process.env.CLIENT_SECRET,
+                    near: location,
+                    radius: 2000,
+                    limit: 1,
+                    v: '20170801'
+                }//qs
+            }, function (err, res, body) {
+                if (err) {
+                    console.log("This is an error message: " + err);
+                    output = {
+                        "dialogAction": {
+                            "type": "Close",
+                            "fulfillmentState": "Fulfilled",
+                            "message": {
+                                "contentType": "PlainText",
+                                "content": 'Sorry, I can\'t find anything happening in ' + location
+                            } //msg
+                        } //dA
+                    } //output
+                    console.log(output);
+                    callback(null, output);
+                } else {
+                    var data = JSON.parse(body),
+                        place = data.response.venues["0"].name,
+                        heads = data.response.venues["0"].hereNow.count;
+                    output = {
+                        "dialogAction": {
+                            "type": "Close",
+                            "fulfillmentState": "Fulfilled",
+                            "message": {
+                                "contentType": "PlainText",
+                                "content": "You might want to check out the following venue : " + place + " It looks like there is currently " + heads +" people checked in."
+                            }//message
+                        }//dialogAction
+                    };//output
+                    console.log("Output: " + output);
+                    callback(null, output);
+                }//else
+            });//request
+
+        },
+    ],
+        function (err, result) {
+            console.log(result);
+            callback(null, result);
+            assert.equal(err, null);
+        }
+    );
+
+};//handler
