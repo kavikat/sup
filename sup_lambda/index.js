@@ -47,29 +47,29 @@ exports.handler = function (event, context, callback) {
                 } else {
                     var data = JSON.parse(body);
 
-                    if (data.response.venues["0"]){
+                    if (data.response.venues["0"]) {
                         var place = data.response.venues["0"].name,
-                        heads = data.response.venues["0"].hereNow.count;
+                            heads = data.response.venues["0"].hereNow.count;
                         output = {
                             "dialogAction": {
                                 "type": "Close",
                                 "fulfillmentState": "Fulfilled",
                                 "message": {
                                     "contentType": "PlainText",
-                                    "content": "You might want to check out the following venue : " + place + " It looks like there is currently " + heads + " people checked in."
+                                    "content": "You might want to check out " + place + " It looks like there is currently " + heads + " people checked in."
                                 }//message
                             }//dialogAction
                         };//output
                         console.log("Output: " + output);
                         callback(null, output);
-                    }else{
+                    } else {
                         output = {
                             "dialogAction": {
                                 "type": "Close",
                                 "fulfillmentState": "Fulfilled",
                                 "message": {
                                     "contentType": "PlainText",
-                                    "content": "Sorry, I can't find anything happening in "+location+" at the moment."
+                                    "content": "Sorry, I can't find anything happening in " + location + " at the moment."
                                 }//message
                             }//dialogAction
                         };//output
