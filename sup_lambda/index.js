@@ -31,7 +31,7 @@ exports.handler = function (event, context, callback) {
             console.error(err);
         } else {
             //console.log(body);
-            var heads = body.hereNow;
+            var heads = body.hereNow,
                 place = body.name;
             output = {
                 "dialogAction": {
