@@ -8,8 +8,7 @@ Start a conversation with sup as simply as sending the word "sup" through one of
 
 #### Channels:
 
-##### You can send a SMS to +1 (650) 822-3156
-or reach sup on Facebook Messenger
+##### SMS : +1 (650) 822-3156
 ##### FB Messenger : 
 
 
