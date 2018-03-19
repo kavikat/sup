@@ -1,5 +1,5 @@
 ![Sup? Logo](logo.png)
-Format: ![Sup?](https://kavikat.github.io/sup/)
+![Sup?](https://kavikat.github.io/sup/)
 
 - - - -
 
