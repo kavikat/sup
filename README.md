@@ -4,7 +4,7 @@ Sup? is a reccomendation engine chatbot.
 
 ### How It Works
 
-Simply wake the bot up with a sup, the bot will inquire which location you are looking for popular venues and return the relevant information.
+Start a conversation with sup as simply as sending the word "sup" through one of the channels (SMS,FB Messenger) & the bot will inquire which location you are looking for and see if there are any buzzing venues.
 
 #### Channels:
 
