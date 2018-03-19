@@ -8,7 +8,8 @@ Simply wake the bot up with a sup, the bot will inquire which location you are l
 
 #### Channels:
 
-##### SMS : (650) 822-3156
+##### You can send a SMS to +1 (650) 822-3156
+or reach sup on Facebook Messenger
 ##### FB Messenger : 
 
 
