@@ -20,6 +20,6 @@ Starting a dialog with Sup? is as easy as sending the word "sup" through one of 
 
 - - - -
 ### Open Source TODO’s
-1. **City validation** (known error), returns error when non-city string is entered in second part of dialog.
+1. **City validation** (known issue), returns error when non-city string is entered in second part of dialog.
 2. **Cards** , return  more detailed venue information.
 3. **Geospatial suggestions**, build a richer suggestion engine, possibly with another venues-like API.
