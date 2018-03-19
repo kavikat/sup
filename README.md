@@ -1,4 +1,4 @@
-[Sup? Logo](logo.png)
+![Sup? Logo](logo.png)
 - - - -
 
 Sup is a recommendation engine chatbot that connects you with the most happening (“buzzing") venues in your locale.
