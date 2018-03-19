@@ -1,5 +1,5 @@
 
-# **Sup is a recommendation engine chatbot that connects you with the most happening (“buzzing") venues in your locale.**
+**Sup is a recommendation engine chatbot that connects you with the most happening (“buzzing") venues in your locale.**
 
 ### How It Works
 
