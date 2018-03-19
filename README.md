@@ -4,7 +4,7 @@ Sup is a reccomendation engine chatbot that connects you with the most happening
 
 ### How It Works
 
-Start a conversation with sup is as easy as sending the word "sup" through one of the available channels (SMS,FB Messenger). The Sup? bot will inquire which location you are looking for and let you know if there are any buzzing venues that you might want to check out.
+Starting a dialog with Sup? is as easy as sending the word "sup" through one of the available channels (SMS,FB Messenger). The Sup? bot will inquire which location you are looking for and let you know if there are any buzzing venues that you might want to check out.
 
 #### Channels:
 
