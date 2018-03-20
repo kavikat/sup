@@ -12,7 +12,7 @@ Starting a dialog with Sup? is as easy as sending the word “sup” through one
 #### Channels:
 
 ##### SMS : +1 (650) 822-3156
-##### FB Messenger : *(coming soon)*
+##### FB Messenger : @botthatlife
 
 - - - -
 
