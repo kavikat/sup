@@ -11,8 +11,8 @@ Starting a dialog with Sup? is as easy as sending the word “sup” through one
 
 #### Channels:
 
-##### ~~SMS : +1 (650) 822-3156
-##### FB Messenger : [@botthatlife](https://www.facebook.com/botthatlife/)~~
+##### ~~SMS : +1 (650) 822-3156~~
+##### ~~FB Messenger : [@botthatlife](https://www.facebook.com/botthatlife/)~~
 
 - - - -
 
